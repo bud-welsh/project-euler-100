@@ -1,51 +1,15 @@
 # A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
 
-first_number = 92
-second_number = 99
-answer = 1
-reverse_answer = 0
-remainder = 0
-store = 0
+answer = 0
+max_palindrome = 0
 
 
-while reverse_answer != answer:
-  answer = first_number * second_number 
-  store = answer
+for first_number in range(999, 100, -1):
+    for second_number in range(first_number, 100, -1):
+        string_answer = str(first_number * second_number)
+        if string_answer == string_answer[::-1]:
+            answer = first_number * second_number
+            if answer > max_palindrome:
+                max_palindrome = answer
 
-  while store > 0:
-    reverse_answer = reverse_answer * 10
-    remainder = store % 10
-    store = ((store - remainder) / 10)
-    reverse_answer = reverse_answer + remainder
-    
-  print(answer)
-  print(reverse_answer)
-  print(first_number)
-  print(second_number)
-  print(remainder)
-  print(store)
-
-  first_number = (first_number - 1)
-  remainder = 0
-  # answer = 1
-  # reverse_answer = 0
-  store = 0
-
-  print(first_number)
-  print(remainder)
-  print(store)
-
-#   if first_number > 0:
-#     first_number = first_number - 1
-#     if first_number == 1:
-#       first_number = 99
-#       second_number = second_number - 1
-#       if second_number == 1:
-#         first_number = 91
-#         second_number = 99
-#       else:
-#         pass
-#     else:
-#       pass
-#   else:
-#     pass
+print(max_palindrome)
