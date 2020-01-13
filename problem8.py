@@ -7,7 +7,15 @@ number = "7316717653133062491922511967442657474235534919493496983520312774506326
 start_range = 0
 end_range = 13
 answer = 1 
+greatest_product = 0
 
-for x in range(start_range, end_range):
-    answer = answer * int(number[x])
-print(answer)
+while end_range != 1000:
+    for x in range(start_range, end_range):
+        answer = answer * int(number[x])
+    if answer > greatest_product:
+        greatest_product = answer
+    answer = 1
+    start_range += 1
+    end_range += 1
+
+print(greatest_product)
