@@ -4,7 +4,7 @@
 
 
 # Variables
-stopping_number = 8 # This is where to stop
+stopping_number = 2000000 # This is where to stop
 sum_of_primes = 2 # Start at 2 because it makes the code easier to write
 number = 3 # 3 is the first odd prime number
 denominator = 3
