@@ -2,24 +2,21 @@
 
 # Find the sum of all the primes below two million.
 
+n = 2000000
+p = 2
+prime = [True for i in range(n + 1)]
 
-# Variables
-stopping_number = 2000000 # This is where to stop
-sum_of_primes = 2 # Start at 2 because it makes the code easier to write
-number = 3 # 3 is the first odd prime number
-denominator = 3
+while (p * p <= n): 
+    if (prime[p] == True): 
+        for i in range(p * 2, n + 1, p): 
+            prime[i] = False
+    p += 1
+prime[0]= False
+prime[1]= False
 
-# The Code
-while number < stopping_number:
-    if number / denominator != 1:
-        if number % denominator != 0:
-            denominator += 2
-        else:
-            number += 2
-            denominator = 3
-    else:
-        sum_of_primes = sum_of_primes + number
-        number += 2
-        denominator = 3
+sum_of_primes = 0 
+for p in range(n + 1): 
+    if prime[p]:
+        sum_of_primes = sum_of_primes + p
 
-print(sum_of_primes)
+print(sum_of_primes) 
